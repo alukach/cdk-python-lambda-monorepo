@@ -7,17 +7,17 @@ class AppStack(core.Stack):
         super().__init__(scope, construct_id, **kwargs)
 
         # Package our common dependencies as layers
-        db_layer = lambda_python.PythonLayerVersion(scope, 'DB lib', entry='common/db')
+        db_layer = lambda_python.PythonLayerVersion(self, 'DB lib', entry='common/db')
 
         lambda_1 = lambda_python.PythonFunction(
-            scope,
+            self,
             'Lambda 1',
             entry='lambdas/lambda_1',
             index='handler.py',
             handler='main'
         )
         lambda_2 = lambda_python.PythonFunction(
-            scope,
+            self,
             'Lambda 2',
             entry='lambdas/lambda_2',
             index='handler.py',

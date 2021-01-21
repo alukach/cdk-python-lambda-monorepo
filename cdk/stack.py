@@ -9,5 +9,17 @@ class AppStack(core.Stack):
         # Package our common dependencies as layers
         db_layer = lambda_python.PythonLayerVersion(scope, 'DB lib', entry='common/db')
 
-        lambda_1 = lambda_python.PythonFunction(scope, 'Lambda 1', entry='lambdas/lambda_1')
-        lambda_2 = lambda_python.PythonFunction(scope, 'Lambda 2', entry='lambdas/lambda_2')
+        lambda_1 = lambda_python.PythonFunction(
+            scope,
+            'Lambda 1',
+            entry='lambdas/lambda_1',
+            index='handler.py',
+            handler='main'
+        )
+        lambda_2 = lambda_python.PythonFunction(
+            scope,
+            'Lambda 2',
+            entry='lambdas/lambda_2',
+            index='handler.py',
+            handler='main'
+        )

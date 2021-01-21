@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0f498ee0b7ea0867d08fd0c822765987555269660195c08eb8a10981bac07eab"
+            "sha256": "f7e1916ec22c8b45a3117f872458c8f8343c8e4075d56b19b0c899767e13e470"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -34,7 +34,7 @@
         },
         "db-utils": {
             "editable": true,
-            "path": "./../../common/db"
+            "path": "./../../layers/db"
         },
         "decorator": {
             "hashes": [
@@ -64,10 +64,6 @@
                 "sha256:92550a404bad8afed881a137ec9a461fed49eca661414be45059329614ed0707"
             ],
             "version": "==0.18.0"
-        },
-        "my-db-pakage": {
-            "editable": true,
-            "path": "./../../common/db"
         },
         "parso": {
             "hashes": [

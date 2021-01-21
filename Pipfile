@@ -1,0 +1,13 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+aws-cdk-core = "==1.86.0"
+aws-cdk-aws-lambda-python = "*"
+
+[requires]
+python_version = "3.8"

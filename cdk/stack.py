@@ -1,4 +1,4 @@
-from aws_cdk import core, aws_lambda_python as lambda_python
+from aws_cdk import core, aws_lambda, aws_lambda_python as lambda_python
 
 
 class AppStack(core.Stack):
@@ -7,7 +7,11 @@ class AppStack(core.Stack):
         super().__init__(scope, construct_id, **kwargs)
 
         # Package our common dependencies as layers
-        db_layer = lambda_python.PythonLayerVersion(self, 'DB lib', entry='common/db')
+        db_layer = lambda_python.PythonLayerVersion(
+            self,
+            'DB lib',
+            entry='common/db'
+        )
 
         lambda_1 = lambda_python.PythonFunction(
             self,
@@ -21,5 +25,6 @@ class AppStack(core.Stack):
             'Lambda 2',
             entry='lambdas/lambda_2',
             index='handler.py',
-            handler='main'
+            handler='main',
+            layers=[db_layer]
         )

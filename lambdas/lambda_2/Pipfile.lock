@@ -34,7 +34,7 @@
         },
         "db-utils": {
             "editable": true,
-            "path": "./../../layers/db"
+            "path": "./../../modules/db"
         },
         "decorator": {
             "hashes": [

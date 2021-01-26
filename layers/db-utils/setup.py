@@ -1,7 +1,7 @@
 import setuptools
 
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
+# with open("README.md", "r", encoding="utf-8") as fh:
+#     long_description = fh.read()
 
 setuptools.setup(
     name="db-utils",
@@ -9,7 +9,7 @@ setuptools.setup(
     author="Example Author",
     author_email="author@example.com",
     description="A small example package",
-    long_description=long_description,
+    # long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/pypa/sampleproject",
     packages=setuptools.find_packages(),
@@ -19,4 +19,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
+    install_requires=[
+        'sqlalchemy>=1.3'
+    ]
 )

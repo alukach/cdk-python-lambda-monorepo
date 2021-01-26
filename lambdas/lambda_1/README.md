@@ -1,0 +1,5 @@
+## Testing
+
+```
+pipenv run pytest
+```

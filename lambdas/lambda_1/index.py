@@ -1,5 +1,5 @@
 from db_utils import db
 
-def main():
+def handler():
     print("Hello from Lambda 2!")
     return db()

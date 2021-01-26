@@ -1,2 +1,3 @@
 cdk.out
 *.egg-info
+.pytest_cache

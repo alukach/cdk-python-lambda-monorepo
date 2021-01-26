@@ -10,21 +10,13 @@ class AppStack(core.Stack):
         db_layer = lambda_python.PythonLayerVersion(
             self,
             'DB lib',
-            entry='layers/db'
+            entry='layers/db-utils'
         )
 
         lambda_1 = lambda_python.PythonFunction(
             self,
             'Lambda 1',
             entry='lambdas/lambda_1',
-            index='handler.py',
-            handler='main'
-        )
-        lambda_2 = lambda_python.PythonFunction(
-            self,
-            'Lambda 2',
-            entry='lambdas/lambda_2',
-            index='handler.py',
-            handler='main',
+            handler='handler',
             layers=[db_layer]
         )

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "56168854dae0d75cd694a53ea68f1f2f8477284e57fa60d1548367ed1fd10386"
+            "sha256": "9ae5b71c29e55f7971dabe3b0d2dcec5e0caa9de015a02723adf62b14b4bbd08"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -17,8 +17,8 @@
     },
     "default": {
         "db-utils": {
-            "editable": true,
-            "path": "."
+            "path": ".",
+            "version": "==0.0.1"
         },
         "sqlalchemy": {
             "hashes": [
@@ -61,6 +61,7 @@
                 "sha256:f1e88b30da8163215eab643962ae9d9252e47b4ea53404f2c4f10f24e70ddc62",
                 "sha256:f8191fef303025879e6c3548ecd8a95aafc0728c764ab72ec51a0bdf0c91a341"
             ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==1.3.22"
         }
     },

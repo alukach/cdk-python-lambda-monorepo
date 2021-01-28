@@ -4,10 +4,15 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+flake8 = "==3.8.4"
+isort = "==5.6.4"
+black = "==20.8b1"
+pytest = "==6.2.2"
 
 [packages]
-aws-cdk-core = "==1.86.0"
-aws-cdk-aws-lambda-python = "*"
+aws-cdk-core = "==1.87.0"
+aws-cdk-aws-lambda-python = "==1.87.0"
+aws-cdk-aws-lambda = "==1.87.0"
 
 [requires]
 python_version = "3.8"

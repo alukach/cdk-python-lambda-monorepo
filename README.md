@@ -28,6 +28,7 @@ We want to not only deploy and build those deterministically, we also want to be
 * [Development - Making a new module](#making-a-new-module)
 * [Development - Making a new Lambda](#making-a-new-lambda)
 * [Development - Deploying your module and Lambda](#deploying-your-module-and-lambda)
+* [Development - Makefile usefulness](#makefile-usefulness)
 
 ---
 
@@ -156,6 +157,15 @@ $ pipenv install --dev # This installs any python packages that are within Pipfi
 
 **Note** It's also useful (and recommended) to set `PIPENV_NO_INHERIT=TRUE` as an environment variable, this prevents our Layer/Lambda level `pipenv` calls from using any other `pipenv` environments we have, making sure that we have everything isolated. Otherwise, you might have to prepend your `pipenv` calls with the environment variable (which is a PITA!)
 
+A file named `.env` is expected in the root of the repository, the expected values are:
+
+```bash
+OWNER="<your name>"
+IDENTIFIER="<a unique value to tie to your cdk deployment>"
+STAGE="<a value for the stage you're deploying to, e.g. $IDENTIFIER, DEV, PRODUCTION>"
+AWS_DEFAULT_PROFILE="<your named AWS CLI profile to use for deployment>"
+```
+
 ---
 
 ## Making a new module
@@ -282,3 +292,29 @@ todo_function = lambda_python.PythonFunction(
     runtime=aws_lambda.Runtime.PYTHON_3_8,
 )
 ```
+
+---
+
+## Makefile usefulness
+
+A `Makefile` is available in the root of the repository to abstract away commonly used commands for development:
+
+**`make lint`**
+
+> This will perform a dry run of `flake8`, `isort`, and `black` and let you know what issues were found
+
+**`make format`**
+
+> This will peform a run of `isort` and `black`, this **will** modify files if issues were found
+
+**`make diff`**
+
+> This will run a `cdk diff` using the contents of your `.env` file
+
+**`make deploy`**
+
+> This will run a `cdk deploy` using the contents of your `.env` file. The deployment is auto-approved, so **make sure** you know what you're changing with your deployment first! (Best to run `make diff` to check!)
+
+**`make destroy`**
+
+> This will run a `cdk destroy` using the contents of your `.env` file. The destroy is auto-approved, so **make sure** you know what you're destroying first!

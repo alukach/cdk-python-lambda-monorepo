@@ -26,6 +26,8 @@ We want to not only deploy and build those deterministically, we also want to be
 * [Development - Requirements](#requirements)
 * [Development - Getting Started 🏃‍♀️](#getting-started-🏃‍♀️)
 * [Development - Making a new module](#making-a-new-module)
+* [Development - Making a new Lambda](#making-a-new-lambda)
+* [Development - Deploying your module and Lambda](#deploying-your-module-and-lambda)
 
 ---
 

@@ -1,2 +1,6 @@
 cdk.out
 *.egg-info
+.pytest_cache
+node_modules
+.vscode
+*.env
